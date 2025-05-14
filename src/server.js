@@ -21,7 +21,10 @@ app.use(express.json())
 app.get('/',(req,res)=>{
     res.send("Server on")
 })
-
+app.use((req, res, next) => {
+  console.log(`Solicitud recibida: ${req.method} ${req.url}`)
+  next()
+})
 // Rutas para pacientes
 app.use('/api', routerNutricionista)
 app.use('/api',routerPacientes)

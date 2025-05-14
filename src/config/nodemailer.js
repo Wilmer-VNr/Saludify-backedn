@@ -17,7 +17,7 @@ const sendMailToRegister = (userMail, token) => {
 
    
     let mailOptions = {
-        from: `saludify@gmail.com`, 
+        from: "saludify@gmail.com", 
         to: userMail,
         subject: "Bienvenido a Saludify 🍎🏋️",
         html: `
@@ -26,7 +26,7 @@ const sendMailToRegister = (userMail, token) => {
                 <p>Estamos emocionados de que formes parte de nuestra comunidad de salud y bienestar.</p>
                 <p>Para completar tu registro y comenzar a monitorear tu nutrición y actividad física, por favor confirma tu cuenta:</p>
                 
-                <a href="${process.env.URL_BACKEND}confirmar/${token}" 
+                <a href="${process.env.URL_FRONTEND}confirmar/${token}" 
                    style="display: inline-block; padding: 10px 20px; background-color: #2e7d32; color: white; text-decoration: none; border-radius: 5px; margin: 15px 0;">
                    Confirmar mi cuenta
                 </a>
@@ -71,7 +71,7 @@ const sendMailToRecoveryPassword = async(userMail,token)=>{
             <p>Hemos recibido una solicitud para restablecer tu contraseña.</p>
             <p>Por favor haz clic en el siguiente enlace para continuar:</p>
                     
-            <a href="${process.env.URL_BACKEND}recuperar-password/${token}" 
+            <a href="${process.env.URL_FRONTEND}recuperar-password/${token}" 
             style="display: inline-block; padding: 10px 20px; background-color: #2e7d32; color: white; text-decoration: none; border-radius: 5px; margin: 15px 0;">
             Restablecer contraseña
             </a>
@@ -113,13 +113,7 @@ const sendMailToPaciente = async(userMail, password) => {
                     <p><strong>Contraseña temporal:</strong> ${password}</p>
                 </div>
                 
-                <a href="${process.env.URL_BACKEND}login" 
-                   style="display: block; width: 200px; text-align: center; padding: 12px 0; 
-                          background-color: #2e7d32; color: white; text-decoration: none; 
-                          border-radius: 5px; margin: 25px auto; font-weight: bold;">
-                   Iniciar Sesión
-                </a>
-                
+                                
                 <p style="font-size: 14px; color: #666;">Por seguridad, te recomendamos cambiar tu contraseña después del primer acceso.</p>
                 
                 <hr style="border: 0; height: 2px; background: linear-gradient(to right, #2e7d32, #81c784); margin: 20px 0;">
